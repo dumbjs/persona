@@ -1,0 +1,39 @@
+{
+  "name": "@dumbjs/persona",
+  "version": "0.0.0",
+  "private": false,
+  "description": "Low level controls to build browser theming engine",
+  "keywords": [
+    "vanilla",
+    "browser",
+    "themes"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub"
+  },
+  "source": "./src/index.js",
+  "homepage": "https://github.com/barelyhuman/themer",
+  "bugs": "https://github.com/barelyhuman/themer/issues/",
+  "license": "MIT",
+  "author": "Reaper <ahoy@barelyhuman.dev>",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "browser": "./dist/index.mjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "unbuild": "^2.0.0"
+  }
+}
