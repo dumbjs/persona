@@ -1,5 +1,13 @@
 # playground
 
+## 0.0.3
+
+### Patch Changes
+
+- e0cc4e0: Update documentation for `core`
+- Updated dependencies [e0cc4e0]
+  - @dumbjs/persona@0.0.3
+
 ## 0.0.2
 
 ### Patch Changes
