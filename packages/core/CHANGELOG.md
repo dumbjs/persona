@@ -1,5 +1,11 @@
 # @dumbjs/persona
 
+## 0.1.0
+
+### Minor Changes
+
+- db3b78d: Better naming and handling of element and storage based theme getters
+
 ## 0.0.3
 
 ### Patch Changes

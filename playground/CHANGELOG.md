@@ -1,5 +1,12 @@
 # playground
 
+## 0.0.4
+
+### Patch Changes
+
+- Updated dependencies [db3b78d]
+  - @dumbjs/persona@0.1.0
+
 ## 0.0.3
 
 ### Patch Changes
