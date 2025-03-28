@@ -4,8 +4,18 @@ const defaults = {
 
 const getMatcher = () => window.matchMedia("(prefers-color-scheme: dark)");
 
-export const getTheme = ({ storageKey = defaults.storageKey } = {}) => {
+export const getTheme = ({
+  element = null,
+  storageKey = defaults.storageKey,
+} = {}) => {
+  if (element) {
+    return getThemeFromElement(element);
+  }
   return getThemeFromStorage(storageKey);
+};
+
+export const getThemeFromElement = (element) => {
+  return element.getAttribute("data-theme");
 };
 
 export const getSystemTheme = () => {
@@ -18,7 +28,9 @@ export const removeTheme = ({
   clearStorage = true,
   storageKey = defaults.storageKey,
 } = {}) => {
-  element.removeAttribute("data-theme");
+  if (element) {
+    element.removeAttribute("data-theme");
+  }
   if (clearStorage) {
     localStorage.removeItem(storageKey);
   }
@@ -44,6 +56,11 @@ export const setTheme = (
   element.setAttribute("data-theme", theme);
 };
 
-export const onThemeChange = (handler: (systemTheme: string) => void) => {
+export const onSystemThemeChange = (handler: (systemTheme: string) => void) => {
   getMatcher().addEventListener("change", (e) => handler(getSystemTheme()));
 };
+
+/**
+ * @deprecated use `onSystemThemeChange` instead
+ */
+export const onThemeChange = onSystemThemeChange;
