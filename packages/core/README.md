@@ -8,7 +8,15 @@
 ## API
 
 ```ts
-const getTheme: ({ storageKey }?: { storageKey?: string }) => string;
+const getTheme: ({
+  element,
+  storageKey,
+}?: {
+  element?: any;
+  storageKey?: string;
+}) => any;
+
+const getThemeFromElement: (element: any) => any;
 
 const getSystemTheme: () => "dark" | "light";
 
@@ -39,5 +47,10 @@ const setTheme: (
   }
 ) => void;
 
+const onSystemThemeChange: (handler: (systemTheme: string) => void) => void;
+
+/**
+ * @deprecated use `onSystemThemeChange` instead
+ */
 const onThemeChange: (handler: (systemTheme: string) => void) => void;
 ```
